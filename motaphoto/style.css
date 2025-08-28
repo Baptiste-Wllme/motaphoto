@@ -4,3 +4,42 @@ Author: Baptiste Willaume
 Description: Thème personnalisé pour Nathalie Mota
 Version: 1.0
 */
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body { font-family: 'Inter', system-ui,  sans-serif; }
+
+.modal {
+  display: flex;
+}
+
+.hero {
+  position: relative;
+  display: inline-block; 
+}
+
+.photoIndex {
+  width: 100%; 
+  height: auto;
+  display: block;
+}
+
+.entry-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 6rem;
+  text-align: center;
+}
+
+
+
+
