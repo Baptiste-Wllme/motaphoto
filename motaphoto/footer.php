@@ -1,13 +1,13 @@
-<?php if ( ! defined('ABSPATH') ) exit; ?>
-</main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="footer-container">
+    <button class="btn-footer">Mention légales</button>
+    <button class="btn-footer">Vie privée</button>
+    <button class="btn-footer">Tous droit réservés</button>
   </div>
 </footer>
 
-<?php get_template_part('templates_part/modal-contact');
-wp_footer();
-?>
+<?php wp_footer(); ?>
+<?php get_template_part('template_part/modal-contact');?>
 </body>
 </html>

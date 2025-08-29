@@ -13,7 +13,10 @@ Version: 1.0
   font-style: normal;
   font-display: swap;
 }
-body { font-family: 'Inter', system-ui,  sans-serif; }
+
+body {
+    font-family: 'Inter', system-ui,  sans-serif; 
+}
 
 .modal {
   display: flex;
@@ -40,6 +43,9 @@ body { font-family: 'Inter', system-ui,  sans-serif; }
   text-align: center;
 }
 
-
+.site-header {
+  height: 80px;
+  align-content: center;
+}
 
 
