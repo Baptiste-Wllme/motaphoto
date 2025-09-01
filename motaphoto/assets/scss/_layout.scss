@@ -25,11 +25,29 @@
       padding-bottom: 50px;
     }
 
-    .wpcf7 {
+    .wpcf7 {                  // contener questionnaire // 
       display: flex;
       justify-content: center;
+      font-family: "Poppins";
 
-      .wpcf7-submit {
+      .wpcf7-form {
+        display: flex;
+        
+        flex-direction: column;
+      }
+
+      input {
+        min-height: 40px;
+        border-radius: 8px;
+        border: 1px solid rgba(184, 187, 194, 1);
+      }
+
+      .wpcf7-textarea { 
+        border-radius: 8px;
+        border: 1px solid rgba(184, 187, 194, 1);
+      }
+
+      .wpcf7-submit {                 // bouton envoyer// 
         width: 100%;
         background-color: rgba(216, 216, 216, 1);
         font-family: "SpaceMono-Regular";

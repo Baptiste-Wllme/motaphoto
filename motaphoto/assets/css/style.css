@@ -48,6 +48,7 @@ body {
 .site-header .site-nav .title-site {
   position: relative;
   left: 5%;
+  max-width: 216px;
 }
 .site-header .site-nav .btn-container {
   display: flex;
@@ -64,6 +65,7 @@ body {
 }
 .site-header .site-nav .btn-container .btn-nav:hover {
   cursor: pointer;
+  opacity: 50%;
 }
 
 .site-footer {
@@ -118,6 +120,20 @@ body {
 .modal .modal__content .wpcf7 {
   display: flex;
   justify-content: center;
+  font-family: "Poppins";
+}
+.modal .modal__content .wpcf7 .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal__content .wpcf7 input {
+  min-height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgb(184, 187, 194);
+}
+.modal .modal__content .wpcf7 .wpcf7-textarea {
+  border-radius: 8px;
+  border: 1px solid rgb(184, 187, 194);
 }
 .modal .modal__content .wpcf7 .wpcf7-submit {
   width: 100%;

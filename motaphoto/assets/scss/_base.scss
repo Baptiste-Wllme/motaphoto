@@ -51,6 +51,7 @@ body {
         .title-site {
             position: relative;
             left: 5%;
+            max-width: 216px;
         }
     
         .btn-container {
@@ -69,6 +70,7 @@ body {
 
             .btn-nav:hover {
                 cursor: pointer;
+                opacity: 50%;
             }
         }  
     }
