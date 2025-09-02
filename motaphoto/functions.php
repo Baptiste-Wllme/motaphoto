@@ -25,3 +25,11 @@ add_action('wp_enqueue_scripts', function () {
 add_action('wp_head', function () {
 
 });
+
+
+function matophoto_register_menus() {
+    register_nav_menus([
+        'main-menu' => __('Menu Principal', 'matophoto'),
+    ]);
+}
+add_action('after_setup_theme', 'matophoto_register_menus');

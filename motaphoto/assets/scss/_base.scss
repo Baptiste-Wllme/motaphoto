@@ -50,28 +50,34 @@ body {
 
         .title-site {
             position: relative;
-            left: 5%;
+            left: 30%;
             max-width: 216px;
         }
     
         .btn-container {
             display: flex;
             position: relative;
-            gap: 30px;
+            gap: 70px;
             right: 5%;
 
-            .btn-nav {
-                background-color: transparent;
-                border: none;
-                font-weight: 400;
-                font-size: 16px;
-                font-family: "SpaceMono-Regular";
+          .menu-item {
+            display: inline-block;
+
+            a {
+            background-color: transparent;
+            border: none;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: "SpaceMono-Regular";
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 0;
             }
 
-            .btn-nav:hover {
-                cursor: pointer;
-                opacity: 50%;
+            a:hover {
+              opacity: 50%;
             }
+          }
         }  
     }
 }

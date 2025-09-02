@@ -7,7 +7,7 @@
         <h1 class="entry-title">photographe event</h1>
     </div>
     <div class="entry-content">
-      
+      <?php the_content(); ?>
     </div>
  
   

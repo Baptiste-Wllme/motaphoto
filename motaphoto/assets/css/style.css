@@ -47,24 +47,29 @@ body {
 }
 .site-header .site-nav .title-site {
   position: relative;
-  left: 5%;
+  left: 30%;
   max-width: 216px;
 }
 .site-header .site-nav .btn-container {
   display: flex;
   position: relative;
-  gap: 30px;
+  gap: 70px;
   right: 5%;
 }
-.site-header .site-nav .btn-container .btn-nav {
+.site-header .site-nav .btn-container .menu-item {
+  display: inline-block;
+}
+.site-header .site-nav .btn-container .menu-item a {
   background-color: transparent;
   border: none;
   font-weight: 400;
   font-size: 16px;
   font-family: "SpaceMono-Regular";
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 0;
 }
-.site-header .site-nav .btn-container .btn-nav:hover {
-  cursor: pointer;
+.site-header .site-nav .btn-container .menu-item a:hover {
   opacity: 50%;
 }
 
