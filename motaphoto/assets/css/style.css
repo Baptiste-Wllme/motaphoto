@@ -39,6 +39,7 @@ body {
 .site-header {
   height: 80px;
   align-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 .site-header .site-nav {
   display: flex;
@@ -146,6 +147,80 @@ body {
   font-family: "SpaceMono-Regular";
   border: none;
   height: 70px;
+}
+
+.container-content {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.container-content .container-photos-infos {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 35px;
+}
+.container-content .container-photos-infos .photo-infos {
+  position: relative;
+  width: 50%;
+  align-content: end;
+  border-bottom: solid black 1px;
+  padding-bottom: 50px;
+}
+.container-content .container-photos-infos .photo-infos .photo-title {
+  font-size: 66px;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 400;
+  flex-wrap: wrap;
+  display: flex;
+}
+.container-content .container-contact-next-prev {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  padding-top: 35px;
+  justify-content: space-between;
+}
+.container-content .container-contact-next-prev .container-btn-contact {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+.container-content .container-contact-next-prev .container-btn-contact p {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 14px;
+  flex-wrap: nowrap;
+}
+.container-content .container-contact-next-prev .container-btn-contact .btn__contact {
+  width: 272px;
+  background-color: rgb(216, 216, 216);
+  font-family: "SpaceMono-Regular";
+  border: none;
+  height: 50px;
+}
+.container-content .container-contact-next-prev .photo-navigation {
+  align-content: end;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.container-content .container-contact-next-prev .photo-navigation .prev a {
+  text-decoration: none;
+  color: #000;
+  font-size: 40px;
+}
+.container-content .container-contact-next-prev .photo-navigation .next a {
+  text-decoration: none;
+  color: #000;
+  font-size: 40px;
+}
+.container-content .container-contact-next-prev .container-next-prev {
+  margin-right: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

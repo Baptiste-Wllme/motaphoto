@@ -14,3 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+jQuery(document).ready(function($){
+    $('.btn__contact').on('click', function(){
+        let ref = $(this).data('ref');
+        // Sélectionne le champ "Réf. Photo" dans ton formulaire Contact Form 7
+        $('input[name="reference-photo"]').val(ref);
+        $('.modal-contact').fadeIn(); // ouvre la modale
+    });
+});

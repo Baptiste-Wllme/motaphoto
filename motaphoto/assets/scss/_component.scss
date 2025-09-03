@@ -1,0 +1,90 @@
+.container-content {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .container-photos-infos {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 35px;
+        
+
+        .photo-infos {
+            position: relative;
+            width: 50%;
+            align-content: end;
+            border-bottom: solid black 1px;
+            padding-bottom: 50px;
+
+            .photo-title { 
+                font-size: 66px;
+                font-style: italic;
+                text-transform: uppercase;
+                font-weight: 400;
+                flex-wrap: wrap;
+                display: flex;
+            }
+        }
+    }
+
+    .container-contact-next-prev {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        padding-top: 35px;
+        justify-content: space-between;
+
+        .container-btn-contact {
+            position: relative;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+
+
+            p {
+                font-family: "Poppins";
+                font-weight: 300;
+                font-size: 14px;
+                flex-wrap: nowrap;
+            }
+
+            .btn__contact {
+                width: 272px;
+                background-color: rgb(216, 216, 216);
+                font-family: "SpaceMono-Regular";
+                border: none;
+                height: 50px;
+            }
+
+        }
+
+        .photo-navigation {
+            align-content: end;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .prev a {
+                text-decoration: none;
+                color: #000;
+                font-size: 40px;
+            }
+
+            .next a {
+                text-decoration: none;
+                color: #000;
+                font-size: 40px;
+            }
+        }
+
+        .container-next-prev {
+            margin-right: 50px;
+        }
+    }
+}
+
+
+
