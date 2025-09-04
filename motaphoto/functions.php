@@ -11,10 +11,12 @@ add_action('wp_enqueue_scripts', function () {
     filemtime(get_template_directory() . '/assets/css/style.css') 
   );
   
+  wp_enqueue_script('jquery');
+  
   wp_enqueue_script(
     'nm-scripts',
     get_template_directory_uri() . '/js/scripts.js',
-    [],
+    ['jquery'],
     null,
     true
   );

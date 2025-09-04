@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const openBtn = document.querySelector('.btn__contact');
-  const modal   = document.querySelector('.modal');
-  const overlay = document.querySelector('.modal__overlay');
+  const btnsContact = document.querySelectorAll('.btn__contact'); 
+  const modal       = document.querySelector('.modal');
+  const overlay     = document.querySelector('.modal__overlay');
 
-  if (openBtn && modal) {
-    openBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      console.log('ça marche');
+  if (btnsContact.length && modal) {
+    btnsContact.forEach(btn => {
+      btn.addEventListener('click', () => {
+        
+        const ref = btn.dataset.ref;
+        const refField = modal.querySelector('input[name="your-subject"]');
+        if(refField) {
+          if (ref) {
+            refField.value = ref; 
+          } else {
+            refField.value = "";  
+          }
+        }
+
+        modal.style.display = 'flex';
+        console.log('Modal ouverte pour la photo :', ref);
+      });
     });
 
     overlay.addEventListener('click', () => {
@@ -15,11 +28,4 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-jQuery(document).ready(function($){
-    $('.btn__contact').on('click', function(){
-        let ref = $(this).data('ref');
-        // Sélectionne le champ "Réf. Photo" dans ton formulaire Contact Form 7
-        $('input[name="reference-photo"]').val(ref);
-        $('.modal-contact').fadeIn(); // ouvre la modale
-    });
-});
+

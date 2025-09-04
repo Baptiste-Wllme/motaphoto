@@ -133,19 +133,27 @@ body {
   flex-direction: column;
 }
 .modal .modal__content .wpcf7 input {
+  padding-left: 10px;
   min-height: 40px;
   border-radius: 8px;
   border: 1px solid rgb(184, 187, 194);
+  text-transform: uppercase;
+}
+.modal .modal__content .wpcf7 textarea {
+  padding-left: 10px;
+  padding-top: 10px;
 }
 .modal .modal__content .wpcf7 .wpcf7-textarea {
   border-radius: 8px;
   border: 1px solid rgb(184, 187, 194);
+  resize: none;
 }
 .modal .modal__content .wpcf7 .wpcf7-submit {
   width: 100%;
   background-color: rgb(216, 216, 216);
   font-family: "SpaceMono-Regular";
   border: none;
+  border-radius: 0;
   height: 70px;
 }
 
@@ -168,17 +176,24 @@ body {
   align-content: end;
   border-bottom: solid black 1px;
   padding-bottom: 50px;
+  text-transform: uppercase;
 }
 .container-content .container-photos-infos .photo-infos .photo-title {
   font-size: 66px;
   font-style: italic;
   text-transform: uppercase;
   font-weight: 400;
-  flex-wrap: wrap;
-  display: flex;
+  width: 50%;
+  line-height: 1;
+  margin-bottom: 25px;
 }
 .container-content .container-photos-infos .photo-main {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
   width: 50%;
+  height: 100%;
+  min-height: 400px;
 }
 .container-content .container-photos-infos .photo-main img {
   max-width: 100%;
@@ -216,24 +231,38 @@ body {
 .container-content .container-contact-next-prev .container-btn-contact .btn__contact:hover {
   cursor: pointer;
 }
+.container-content .container-contact-next-prev .container-next-prev {
+  margin-right: 0px;
+}
+.container-content .container-contact-next-prev .photo-navigation a {
+  position: relative;
+  display: inline-block;
+  top: 35px;
+  position: relative;
+}
 .container-content .container-contact-next-prev .photo-navigation {
-  align-content: end;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 30px;
 }
-.container-content .container-contact-next-prev .photo-navigation .prev a {
-  text-decoration: none;
-  color: #000;
-  font-size: 40px;
+.container-content .container-contact-next-prev .photo-navigation .prev .preview {
+  position: absolute;
+  top: -70px;
+  display: none;
 }
-.container-content .container-contact-next-prev .photo-navigation .next a {
-  text-decoration: none;
-  color: #000;
-  font-size: 40px;
+.container-content .container-contact-next-prev .photo-navigation .next .preview {
+  position: absolute;
+  top: -70px;
+  display: none;
+  transform: translateX(-70%);
 }
-.container-content .container-contact-next-prev .container-next-prev {
-  margin-right: 50px;
+.container-content .container-contact-next-prev .photo-navigation a:hover .preview {
+  display: block;
+}
+.container-content .container-contact-next-prev .photo-navigation a:hover .preview img {
+  width: 81px;
+  height: 71px;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=style.css.map */

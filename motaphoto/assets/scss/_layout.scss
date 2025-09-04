@@ -37,14 +37,22 @@
       }
 
       input {
+        padding-left: 10px;
         min-height: 40px;
         border-radius: 8px;
         border: 1px solid rgba(184, 187, 194, 1);
+        text-transform: uppercase;
+      }
+
+      textarea {
+        padding-left: 10px;
+        padding-top: 10px;
       }
 
       .wpcf7-textarea { 
         border-radius: 8px;
         border: 1px solid rgba(184, 187, 194, 1);
+        resize: none;
       }
 
       .wpcf7-submit {                 // bouton envoyer// 
@@ -52,6 +60,7 @@
         background-color: rgba(216, 216, 216, 1);
         font-family: "SpaceMono-Regular";
         border: none;
+        border-radius: 0;
         height: 70px;
       }
     }
