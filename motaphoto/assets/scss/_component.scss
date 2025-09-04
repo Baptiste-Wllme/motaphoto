@@ -14,6 +14,7 @@
         .photo-infos {
             position: relative;
             width: 50%;
+            max-width: 50%;
             align-content: end;
             border-bottom: solid black 1px;
             padding-bottom: 50px;
@@ -27,14 +28,25 @@
                 display: flex;
             }
         }
+
+        .photo-main {
+            width: 50%;
+            
+            img {
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
     }
 
     .container-contact-next-prev {
         display: flex;
         position: relative;
         flex-direction: row;
-        padding-top: 35px;
         justify-content: space-between;
+        border-bottom: solid black 1px;
+        height: 118px;
+        align-items: center;
 
         .container-btn-contact {
             position: relative;
@@ -58,6 +70,10 @@
                 border: none;
                 height: 50px;
             }
+
+            .btn__contact:hover {
+                    cursor: pointer;
+                }
 
         }
 

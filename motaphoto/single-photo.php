@@ -2,34 +2,49 @@
 
 <main id="site-content" role="main">
 
-<?php
-if ( have_posts() ) :
-    while ( have_posts() ) : the_post();
-        
-        $reference = get_post_meta(get_the_ID(), 'reference', true);
-        $type = get_post_meta(get_the_ID(), 'type', true);
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-?>
+    <?php  
+     // récupération de reference et type qui sont des arrays//
+    $reference = SCF::get('reference');
+    $type      = SCF::get('type');
+    $categories = get_the_terms(get_the_ID(), 'categorie');
+    $formats    = get_the_terms(get_the_ID(), 'format');
+
+     if (is_array($type) && isset($type[0]['Type'])) {
+        $type_value = $type[0]['Type'];
+    } else {
+        $type_value = '';
+    }
+
+    if (is_array($reference) && isset($reference[0]['Référence'])) {  
+        $reference_value = $reference[0]['Référence'];
+    } else {
+        $reference_value = '';
+    } 
+
+
+    
+    ?>
 
 
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('single-photo'); ?>>
 
-       
+    
 
       <!-- Zone informations -->
       <div class="container-content">
           <div class="container-photos-infos">
             <div class="photo-infos">
                 <h1 class="photo-title"><?php the_title(); ?></h1>
-                <p>Référence : <?php echo esc_html($reference); ?></p>
-                <p>Catégorie : <?php the_terms(get_the_ID(), 'categorie'); ?></p>
-                <p>Format : <?php the_terms(get_the_ID(), 'format'); ?></p>
-                <p>Type : <?php echo esc_html($type); ?></p>
+                <p>Référence : <?php echo esc_html($reference_value); ?> </p>
+                <p>Catégorie : <?php echo esc_html($categories[0]->name); ?></p>
+                <p>Format : <?php echo esc_html($formats[0]->name); ?></p>
+                <p>Type : <?php echo esc_html($type_value); ?></p>
                 <p>Date : <?php echo get_the_date(); ?></p>
-
-                
             </div>
+
 
              <!-- Zone image principale -->
             <div class="photo-main">
