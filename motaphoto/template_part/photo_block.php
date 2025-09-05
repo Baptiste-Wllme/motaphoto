@@ -1,6 +1,9 @@
 <article class="photo-block">
-    <a href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail('medium', ['class' => 'photo-thumb']); ?>
-        <h3 class="photo-title"><?php the_title(); ?></h3>
-    </a>
+    <div class="container-photo-block">
+         <?php 
+        if (has_post_thumbnail()) {
+            the_post_thumbnail('large', ['class' => 'photo-thumb']);
+        }
+        ?>
+    </div>
 </article>

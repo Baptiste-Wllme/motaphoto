@@ -91,41 +91,51 @@
                 </div>
             </div>
         </div>
+        <!-- Zone photos apparentées -->
+        <div class="related-photos">
+            <h2>vous aimerez aussi</h2>
+            <div class="related-photos-list">
+                <?php
+                
+                $categories = wp_get_post_terms(get_the_ID(), 'categorie');
+
+                if (!empty($categories) && !is_wp_error($categories)) {
+                    $cat_id = $categories[0]->term_id;
+                
+                    
+                    $args = [
+                        'post_type'      => 'photo',
+                        'posts_per_page' => 2, 
+                        'post__not_in'   => [get_the_ID()], 
+                        'tax_query'      => [
+                            [
+                                'taxonomy' => 'categorie',
+                                'field'    => 'term_id',
+                                'terms'    => $cat_id,
+                            ],
+                        ],
+                    ];
+                
+                    $related = new WP_Query($args);
+                
+                    if ($related->have_posts()) {
+                        while ($related->have_posts()) {
+                            $related->the_post();
+                            get_template_part('template_part/photo_block'); 
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        echo '<p>Aucune photo apparentée.</p>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
     </div>
         
         
 
-        <!-- Zone photos apparentées -->
-        <div class="related-photos">
-            <h2>vous aimerez aussi</h2>
-            <div class="related-grid">
-                <?php
-                // Récupérer les catégories de la photo courante
-                $categories = wp_get_post_terms(get_the_ID(), 'categorie', ['fields' => 'ids']);
-
-                $args = [
-                    'post_type' => 'photo',
-                    'posts_per_page' => 3,
-                    'post__not_in' => [get_the_ID()],
-                    'tax_query' => [
-                        [
-                            'taxonomy' => 'categorie',
-                            'field'    => 'id',
-                            'terms'    => $categories,
-                        ]
-                    ]
-                ];
-                $related = new WP_Query($args);
-
-                if ( $related->have_posts() ) :
-                    while ( $related->have_posts() ) : $related->the_post();
-                        get_template_part('templates_parts/photo_block');
-                    endwhile;
-                    wp_reset_postdata();
-                endif;
-                ?>
-            </div>
-        </div>
+    
 
     </article>
 
