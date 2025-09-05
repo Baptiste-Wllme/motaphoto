@@ -73,14 +73,24 @@
 
             .btn__contact {
                 width: 272px;
-                background-color: rgb(216, 216, 216);
                 font-family: "SpaceMono-Regular";
-                border: none;
                 height: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background: #d8d8d8;
+                color: #111;
+                transition: transform 1s, 
+                            box-shadow 1s,
+                            opacity 1s ease;            
             }
 
             .btn__contact:hover {
                     cursor: pointer;
+                    transform: translateY(-3px) scale(1.1);
+                    box-shadow: 0 8px 18px rgba(0,0,0,0.50);
+                    opacity: 0.7;
                 }
 
         }

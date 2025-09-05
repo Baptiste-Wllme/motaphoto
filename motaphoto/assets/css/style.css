@@ -11,21 +11,16 @@ body {
 
 .hero {
   position: relative;
-  display: inline-block;
-}
-
-.photoIndex {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.entry-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+.hero-title {
   font-size: 120px;
   font-style: italic;
   font-weight: 500;
@@ -34,6 +29,59 @@ body {
   color: transparent;
   -webkit-text-stroke: 3px #ffffff;
   text-transform: uppercase;
+}
+
+.filters {
+  margin: 40px;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: -7rem;
+}
+.filters .photo-filters,
+.filters .date-filter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.filters .photo-filters select,
+.filters .date-filter select {
+  padding: 10px 15px;
+  border: 1px solid rgb(184, 187, 194);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  width: 260px;
+}
+
+.photo-list {
+  margin: 40px auto;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.photo-list .container-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px 5%;
+}
+.photo-list .container-photos .photo-block {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  justify-self: center;
+}
+.photo-list .container-photos .photo-block img {
+  width: 35vw;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
 .site-header {
@@ -224,13 +272,21 @@ body {
 }
 .container-content .container-contact-next-prev .container-btn-contact .btn__contact {
   width: 272px;
-  background-color: rgb(216, 216, 216);
   font-family: "SpaceMono-Regular";
-  border: none;
   height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #d8d8d8;
+  color: #111;
+  transition: transform 1s, box-shadow 1s, opacity 1s ease;
 }
 .container-content .container-contact-next-prev .container-btn-contact .btn__contact:hover {
   cursor: pointer;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
 }
 .container-content .container-contact-next-prev .container-next-prev {
   margin-right: 0px;
