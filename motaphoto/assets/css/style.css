@@ -21,13 +21,14 @@ body {
 }
 
 .hero-title {
+  font-family: "SpaceMono-Regular";
   font-size: 120px;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   text-wrap: nowrap;
   color: transparent;
-  -webkit-text-stroke: 3px #ffffff;
+  -webkit-text-stroke: 0.1px #ffffff;
   text-transform: uppercase;
 }
 
@@ -71,17 +72,36 @@ body {
   gap: 30px;
   margin: 40px 5%;
 }
-.photo-list .container-photos .photo-block {
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  justify-self: center;
-}
 .photo-list .container-photos .photo-block img {
   width: 35vw;
   height: 600px;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
+}
+
+.load-more-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn {
+  width: 272px;
+  font-family: "SpaceMono-Regular";
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #d8d8d8;
+  color: #111;
+  transition: transform 1s, box-shadow 1s, opacity 1s ease;
+}
+
+#load-more:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
 }
 
 .site-header {
@@ -270,7 +290,7 @@ body {
   font-size: 14px;
   flex-wrap: nowrap;
 }
-.container-content .container-contact-next-prev .container-btn-contact .btn__contact {
+.container-content .container-contact-next-prev .container-btn-contact .btn {
   width: 272px;
   font-family: "SpaceMono-Regular";
   height: 50px;

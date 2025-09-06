@@ -60,7 +60,7 @@
             <div class="container-btn-contact">
                <!-- Bouton Contact -->
                 <p>Cette photo vous intéresse ?</p>
-                <button class="btn__contact" data-ref="<?php echo esc_html($reference_value); ?>">
+                <button class="btn btn__contact" data-ref="<?php echo esc_html($reference_value); ?>">
                     Contact
                 </button>
             </div>

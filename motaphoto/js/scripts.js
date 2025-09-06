@@ -28,4 +28,31 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+jQuery(document).ready(function ($) {
+  $('#load-more').on('click', function () {
+    let button = $(this);
+    let page = button.data('page');
+
+    $.ajax({
+      url: ajaxurl, 
+      type: 'POST',
+      data: {
+        action: 'load_more_photos',
+        page: page,
+      },
+      beforeSend: function () {
+        button.text('Chargement des photos');
+      },
+      success: function (response) {
+        if (response.trim() !== '') {
+          $('.container-photos').append(response);
+          button.data('page', page + 1);
+          button.text('Charger plus');
+        } else {
+          button.text('Plus de photos').prop('disabled', true);
+        }
+      },
+    });
+  });
+});
 

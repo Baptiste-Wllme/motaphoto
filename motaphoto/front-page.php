@@ -88,7 +88,8 @@ endif;
       $args = [
         'post_type'      => 'photo',
         'posts_per_page' => 8,
-        'orderby'        => 'rand',
+        'paged'          => 1,
+
       ];
       $photos = new WP_Query($args);
 
@@ -102,6 +103,13 @@ endif;
         echo '<p>Aucune photo trouvée.</p>';
       }
       ?>
+    </div>
+  </section>
+
+  <!-- Bouton Load More -->
+  <section class="btn-load-more">
+    <div class="load-more-container">
+      <button class="btn" id="load-more" data-page="1">Charger plus</button>
     </div>
   </section>
   
