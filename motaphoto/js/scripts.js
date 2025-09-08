@@ -28,31 +28,57 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-jQuery(document).ready(function ($) {
-  $('#load-more').on('click', function () {
-    let button = $(this);
-    let page = button.data('page');
 
-    $.ajax({
-      url: ajaxurl, 
-      type: 'POST',
-      data: {
-        action: 'load_more_photos',
-        page: page,
-      },
-      beforeSend: function () {
-        button.text('Chargement des photos');
-      },
-      success: function (response) {
-        if (response.trim() !== '') {
-          $('.container-photos').append(response);
-          button.data('page', page + 1);
-          button.text('Charger plus');
+jQuery(document).ready(function ($) {
+  const $container = $('.container-photos');
+  const $button = $('#load-more');
+
+  function loadPhotos(page = 1, append = false) {
+
+    if (typeof nm_ajax === 'undefined') {
+      console.error('nm_ajax non défini — vérifie wp_localize_script.');
+      return;
+    }
+
+    const data = {
+      action: 'filter_photos',
+      categorie: $('#photo-filters select[name="categorie"]').val() || '',
+      format: $('#photo-filters select[name="format"]').val() || '',
+      order: $('#filter-date').val() || '',
+      page: page,
+    };
+
+    console.log('Ajax request data:', data);
+
+    $.post(nm_ajax.ajax_url, data)
+      .done(function (response) {
+        console.log('Ajax response:', response);
+        if (append) {
+          $container.append(response);
         } else {
-          button.text('Plus de photos').prop('disabled', true);
+          $container.html(response);
+          
+          $button.data('page', 1);
         }
-      },
-    });
+      })
+      .fail(function (xhr, status, error) {
+        console.error('Ajax error:', status, error, xhr.responseText);
+      });
+  }
+
+  $(document).on('change', '#photo-filters select, #filter-date', function () {
+    $button.prop('disabled', false).text('Charger plus').data('page', 1);
+    loadPhotos(1, false);
+  });
+
+ 
+  $button.on('click', function () {
+    const page = parseInt($button.data('page')) || 1;
+    loadPhotos(page + 1, true);
+    $button.data('page', page + 1);
   });
 });
+
+
+
 

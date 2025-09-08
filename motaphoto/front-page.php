@@ -42,7 +42,7 @@ endif;
   
   <!-- Zone filtres -->
   <section class="filters">
-    <div class="photo-filters">
+    <div id="photo-filters" class="photo-filters">
       <!-- Catégories -->
       <select name="categorie">
         <option value="">catégories</option>
@@ -67,16 +67,12 @@ endif;
     </div>
 
     <div class="date-filter">
-        <select name="date">
-          <option value="">trier par</option>
-          <?php
-          $date = get_terms('date');
-          foreach ($date as $dt) {
-            echo '<option value="' . esc_attr($dt->slug) . '">' . esc_html($dat->name) . '</option>';
-          }
-          ?>
+      <select name="date_order" id="filter-date">
+        <option value="">Trier par</option>
+        <option value="DESC">Plus récentes → Plus anciennes</option>
+        <option value="ASC">Plus anciennes → Plus récentes</option>
       </select>
-    <div>
+    </div>
 
     
   </section>
@@ -89,6 +85,7 @@ endif;
         'post_type'      => 'photo',
         'posts_per_page' => 8,
         'paged'          => 1,
+        'orderby'        => 'rand'
 
       ];
       $photos = new WP_Query($args);

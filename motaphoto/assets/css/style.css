@@ -39,7 +39,6 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 2rem;
-  margin-right: -7rem;
 }
 .filters .photo-filters,
 .filters .date-filter {
