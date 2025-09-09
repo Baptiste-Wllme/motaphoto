@@ -6,12 +6,12 @@
 
     <?php  
      // récupération de reference et type qui sont des arrays//
-    $reference = SCF::get('reference');
-    $type      = SCF::get('type');
-    $categories = get_the_terms(get_the_ID(), 'categorie');
-    $formats    = get_the_terms(get_the_ID(), 'format');
-    $prev_post = get_previous_post();
-    $next_post = get_next_post();
+    $reference       = SCF::get('reference', get_the_ID());
+    $type            = SCF::get('type');
+    $categories      = get_the_terms(get_the_ID(), 'categorie');
+    $formats         = get_the_terms(get_the_ID(), 'format');
+    $prev_post       = get_previous_post();
+    $next_post       = get_next_post();
 
      if (is_array($type) && isset($type[0]['Type'])) {
         $type_value = $type[0]['Type'];
@@ -19,11 +19,11 @@
         $type_value = '';
     }
 
-    if (is_array($reference) && isset($reference[0]['Référence'])) {  
-        $reference_value = $reference[0]['Référence'];
+    if (is_array($reference) && isset($reference[0]['Reference'])) {
+    $reference_value = $reference[0]['Reference'];
     } else {
-        $reference_value = '';
-    } 
+        $reference_value = is_string($reference) ? $reference : '';
+    }
 
 
     

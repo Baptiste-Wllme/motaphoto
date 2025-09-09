@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const img      = lightbox.querySelector(".lightbox__img");
   const refEl    = lightbox.querySelector(".lightbox__ref");
   const catEl    = lightbox.querySelector(".lightbox__cat");
-  const gallery  = document.querySelectorAll(".photo-block img");
+  const gallery  = document.querySelectorAll(".photo-img");
 
   let photos = [];
   let currentIndex = 0;
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //  lightbox au clic //
-  gallery.forEach(el => {
-    el.addEventListener("click", () => {
-      currentIndex = parseInt(el.dataset.index);
+  document.querySelectorAll(".btn-lightbox").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      currentIndex = i;
       showPhoto(currentIndex);
       lightbox.style.display = "flex";
     });
