@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
       page: page,
     };
 
-    console.log('Ajax request data:', data);
+    console.log('Ajax request data:', data);  // j'ai vérifier dans la consol si les données étaient présente
 
     $.post(nm_ajax.ajax_url, data)
       .done(function (response) {
@@ -63,7 +63,11 @@ jQuery(document).ready(function ($) {
       })
       .fail(function (xhr, status, error) {
         console.error('Ajax error:', status, error, xhr.responseText);
-      });
+      })
+      .always(function () {
+        $button.prop('disabled', false).text('Charger plus');
+      })
+      ;
   }
 
   $(document).on('change', '#photo-filters select, #filter-date', function () {
@@ -74,6 +78,7 @@ jQuery(document).ready(function ($) {
  
   $button.on('click', function () {
     const page = parseInt($button.data('page')) || 1;
+    $button.prop('disabled', true).text('Chargement ...');
     loadPhotos(page + 1, true);
     $button.data('page', page + 1);
   });

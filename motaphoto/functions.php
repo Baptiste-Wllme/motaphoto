@@ -98,6 +98,17 @@ function nm_filter_photos() {
     wp_die();
 }
 
+function nm_enqueue_lightbox() {
+    wp_enqueue_script(
+        'nm-lightbox',
+        get_template_directory_uri() . '/js/lightbox.js',
+        [],
+        filemtime(get_template_directory() . '/js/lightbox.js'),
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'nm_enqueue_lightbox');
+
 
 
 

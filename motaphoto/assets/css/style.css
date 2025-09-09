@@ -368,4 +368,101 @@ body {
   object-fit: cover;
 }
 
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox .lightbox__close {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.lightbox .lightbox__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.lightbox .lightbox__content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 10000;
+  color: #fff;
+  text-align: center;
+}
+.lightbox .lightbox__content .lightbox__img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox .lightbox__content .lightbox__img-container .lightbox__img {
+  max-height: 80vh;
+  display: block;
+}
+.lightbox .lightbox__content .lightbox__img-container .lightbox__prev,
+.lightbox .lightbox__content .lightbox__img-container .lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: transparent;
+  font-size: 15px;
+  font-family: "SpaceMono-Regular";
+  text-transform: uppercase;
+}
+.lightbox .lightbox__content .lightbox__img-container .lightbox__prev {
+  left: -150px;
+}
+.lightbox .lightbox__content .lightbox__img-container .lightbox__next {
+  right: -140px;
+}
+.lightbox .lightbox__content .lightbox__img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+.lightbox .lightbox__content .lightbox__caption {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lightbox .lightbox__content .lightbox__caption .lightbox__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.lightbox .lightbox__content .lightbox__caption .lightbox__info .lightbox__ref,
+.lightbox .lightbox__content .lightbox__caption .lightbox__info .lightbox__cat {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.lightbox .lightbox__content .lightbox__caption .lightbox__nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+}
+
 /*# sourceMappingURL=style.css.map */
