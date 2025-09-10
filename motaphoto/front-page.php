@@ -44,34 +44,40 @@ endif;
   <section class="filters">
     <div id="photo-filters" class="photo-filters">
       <!-- Catégories -->
-      <select name="categorie">
-        <option value="">catégories</option>
-        <?php
-        $categories = get_terms('categorie');
-        foreach ($categories as $cat) {
-          echo '<option value="' . esc_attr($cat->slug) . '">' . esc_html($cat->name) . '</option>';
-        }
-        ?>
-      </select>
+      <div class="dropdown" data-filter="categorie">
+        <button class="dropdown-toggle select">Catégories ⏷</button>
+        <ul class="dropdown-content">
+          <li data-value="">Catégories</li>
+          <?php
+          $categories = get_terms('categorie');
+          foreach ($categories as $cat) {
+            echo '<li data-value="' . esc_attr($cat->slug) . '">' . esc_html($cat->name) . '</li>';
+          }
+          ?>
+        </ul>
+      </div>
 
       <!-- Formats -->
-      <select name="format">
-        <option value="">formats</option>
-        <?php
-        $formats = get_terms('format');
-        foreach ($formats as $fmt) {
-          echo '<option value="' . esc_attr($fmt->slug) . '">' . esc_html($fmt->name) . '</option>';
-        }
-        ?>
-      </select>
+      <div class="dropdown" data-filter="format">
+        <button class="dropdown-toggle  select">Formats ⏷</button>
+        <ul class="dropdown-content">
+          <li data-value="">Tous</li>
+          <?php
+          $formats = get_terms('format');
+          foreach ($formats as $fmt) {
+            echo '<li data-value="' . esc_attr($fmt->slug) . '">' . esc_html($fmt->name) . '</li>';
+          }
+          ?>
+        </ul>
+      </div>
     </div>
 
-    <div class="date-filter">
-      <select name="date_order" id="filter-date">
-        <option value="">Trier par</option>
-        <option value="DESC">Plus récentes → Plus anciennes</option>
-        <option value="ASC">Plus anciennes → Plus récentes</option>
-      </select>
+    <div class="dropdown" data-filter="order">
+      <button class="dropdown-toggle select">Trier par ⏷</button>
+      <ul class="dropdown-content">
+        <li data-value="DESC">Plus récentes → Plus anciennes</li>
+        <li data-value="ASC">Plus anciennes → Plus récentes</li>
+      </ul>
     </div>
 
     

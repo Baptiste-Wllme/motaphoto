@@ -41,26 +41,29 @@ body {
   text-align: center;
   flex-direction: row;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-left: 2rem;
+
+  .select {
+    padding: 10px 15px;
+    border: 1px solid rgba(184, 187, 194, 1);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    width: 260px;
+    background-color: white;
+  }
 
   .photo-filters,
   .date-filter {
     display: flex;
-    justify-content: center;
+    
     gap: 20px;
     flex-wrap: wrap;
     width: 50%;
 
-    select {
-      padding: 10px 15px;
-      border: 1px solid rgba(184, 187, 194, 1);
-      font-family: "Poppins", sans-serif;
-      font-size: 12px;
-      text-transform: uppercase;
-      border-radius: 8px;
-      width: 260px;
-    }
+    
   }
 }
 
@@ -114,12 +117,53 @@ body {
   box-shadow: 0 8px 18px rgba(0,0,0,0.50);
   opacity: 0.7;
 }
+// css animation filtres //
 
-// css hover photo //
-
-.photo-block:hover {
-  background-color: #111;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
 }
+
+.dropdown-toggle {
+  padding: 8px 12px;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;        
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease;
+  z-index: 10;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.dropdown-content.show {
+  max-height: 300px;    
+  opacity: 1;
+  width: 100%;
+}
+
+.dropdown-content li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-content li:hover {
+  background: rgba(255, 214, 214, 1)0;
+}
+
 
 
 //  css header //

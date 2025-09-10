@@ -3,31 +3,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const img      = lightbox.querySelector(".lightbox__img");
   const refEl    = lightbox.querySelector(".lightbox__ref");
   const catEl    = lightbox.querySelector(".lightbox__cat");
-  const gallery  = document.querySelectorAll(".photo-img");
 
-  let photos = [];
-  let currentIndex = 0;
+  let currentGallery = [];
+  let currentIndex   = 0;
 
-  // tableau des photos // 
-  gallery.forEach((el, i) => {
-    photos.push({
-      src: el.getAttribute("src"),
-      ref: el.dataset.ref || "Sans référence",
-      cat: el.dataset.cat || "Sans catégorie"
+  //J'ai reconstruis une galerie photo à partir d'un conteneur
+  function buildGallery(container) {
+    const photos = Array.from(container.querySelectorAll(".photo-img"));
+    photos.forEach((el, i) => {
+      el.dataset.index = i;
     });
-    el.dataset.index = i;
-  });
+    return photos;
+  }
 
-  //  lightbox au clic //
-  document.querySelectorAll(".btn-lightbox").forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-      currentIndex = i;
-      showPhoto(currentIndex);
-      lightbox.style.display = "flex";
-    });
-  });
+  // Trouver le dossier parent qui est soit container-photos ou related-photos-list pour que ça touche la gallerie et les photos dans single-photo
+  function findGalleryContainer(el) {
+    return el.closest(".container-photos, .related-photos-list");
+  }
+
+  // Afficher la photo courante
+  function showByIndex(index) {
+    if (!currentGallery.length) return;
+    const el = currentGallery[index];
+    if (!el) return;
+
+    img.src = el.getAttribute("src");
+    refEl.textContent = el.dataset.ref || "Sans référence";
+    if (catEl) {
+      catEl.textContent = el.dataset.cat || "Aucune catégorie";
+    }
+  }
+
+
 
   
+  
+
+  //  Clic sur bouton fullscreen qui ouvre lightbox
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".btn-fullscreen");
+    if (!btn) return;
+
+    e.stopPropagation();
+    const photo = btn.closest(".container-photo-block").querySelector(".photo-img");
+    if (!photo) return;
+
+    const container = findGalleryContainer(photo);
+    currentGallery = buildGallery(container);
+    currentIndex   = currentGallery.indexOf(photo);
+    if (currentIndex === -1) currentIndex = 0;
+
+    showByIndex(currentIndex);
+    lightbox.style.display = "flex";
+  });
+
+  // Fermer lightbox
   lightbox.querySelector(".lightbox__close").addEventListener("click", () => {
     lightbox.style.display = "none";
   });
@@ -35,18 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.style.display = "none";
   });
 
+ // Navigation suivant
   lightbox.querySelector(".lightbox__next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % photos.length;
-    showPhoto(currentIndex);
-  });
-  lightbox.querySelector(".lightbox__prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-    showPhoto(currentIndex);
+    if (!currentGallery.length) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    showByIndex(currentIndex);
   });
 
-  function showPhoto(index) {
-    img.src = photos[index].src;
-    refEl.textContent = photos[index].ref;
-    catEl.textContent = photos[index].cat;
-  }
+  //  Navigation précédent
+  lightbox.querySelector(".lightbox__prev").addEventListener("click", () => {
+    if (!currentGallery.length) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    showByIndex(currentIndex);
+  });
+
+ 
 });

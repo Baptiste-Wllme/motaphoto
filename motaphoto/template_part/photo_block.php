@@ -20,9 +20,9 @@ $cat_name = $cats && !is_wp_error($cats) ? $cats[0]->name : '';
     >
   
     <div class="photo-overlay">
-      
+      <!-- Bouton fullscreen -->
       <button class="btn-lightbox" title="Agrandir">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icon_fullscreen.png" class="btn-fullscreen" alt="Agrandir">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icon_fullscreen.png"  class ="btn-fullscreen" alt="Agrandir">
       </button>
       
       <div class="photo-title-vision"><?php echo esc_html($title); ?></div>
@@ -30,7 +30,7 @@ $cat_name = $cats && !is_wp_error($cats) ? $cats[0]->name : '';
       
       <div class="photo-cat"><?php echo esc_html($cat_name); ?></div>
 
-      
+      <!-- Bouton oeil vers la page single -->
       <a href="<?php the_permalink(); ?>" class="photo-eye" title="Voir la fiche">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icon_eye.png" class="btn-vision" alt="Voir la photo">
       </a>
