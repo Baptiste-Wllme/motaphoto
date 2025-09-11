@@ -7,6 +7,7 @@
 }
 body {
   font-family: "SpaceMono-Regular";
+  margin: 0;
 }
 
 .hero {
@@ -22,9 +23,9 @@ body {
 
 .hero-title {
   font-family: "SpaceMono-Regular";
-  font-size: 120px;
+  font-size: 96px;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   text-wrap: nowrap;
   color: transparent;
@@ -39,6 +40,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin-left: 2rem;
+  margin-bottom: 10px;
 }
 .filters .select {
   padding: 10px 15px;
@@ -63,6 +65,7 @@ body {
   flex-direction: row;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 .photo-list .container-photos {
   display: grid;
@@ -106,15 +109,27 @@ body {
   position: relative;
   display: inline-block;
 }
-
-.dropdown-toggle {
-  padding: 8px 12px;
-  background: #eee;
+.dropdown .dropdown-toggle {
+  padding: 0px 12px;
   border: 1px solid #ccc;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 8%;
+  padding-right: 8%;
+  align-items: center;
 }
-
-.dropdown-content {
+.dropdown .dropdown-toggle .arrow-up {
+  display: none;
+  font-size: 25px;
+  transition: opacity 1s ease;
+}
+.dropdown .dropdown-toggle .arrow-down {
+  display: flex;
+  font-size: 25px;
+}
+.dropdown .dropdown-content {
   position: absolute;
   left: 0;
   top: 100%;
@@ -125,21 +140,35 @@ body {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 1s ease;
+  transition: max-height 2s ease;
   z-index: 10;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-
-.dropdown-content.show {
+.dropdown .dropdown-content li {
+  padding: 8px 12px;
+  cursor: pointer;
+  justify-content: flex-start;
+  display: flex;
+  padding-left: 20px;
+  font-family: "poppins";
+  font-weight: 500;
+  font-size: 12px;
+  min-height: 12px;
+  text-transform: uppercase;
+}
+.dropdown .dropdown-content .active {
+  background-color: rgb(224, 0, 0);
+  color: #ffffff;
+}
+.dropdown .show {
   max-height: 300px;
   opacity: 1;
   width: 100%;
 }
-
-.dropdown-content li {
-  padding: 8px 12px;
-  cursor: pointer;
+.dropdown .closing {
+  max-height: 0;
+  opacity: 0;
 }
 
 .dropdown-content li:hover {

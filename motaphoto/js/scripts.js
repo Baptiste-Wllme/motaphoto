@@ -52,17 +52,35 @@ jQuery(document).ready(function ($) {
   document.querySelectorAll(".dropdown").forEach(drop => {
     const toggle = drop.querySelector(".dropdown-toggle");
     const menu   = drop.querySelector(".dropdown-content");
+    const arrowUp = drop.querySelector(".arrow-up");
+    const arrowDown = drop.querySelector(".arrow-down");
+    const label     = toggle.querySelector("div:first-child");
 
     toggle.addEventListener("click", (e) => {
       e.stopPropagation();
       menu.classList.toggle("show");
+
+      if (arrowDown.style.display ==='none') {
+        arrowDown.style.display = 'flex';
+        arrowUp.style.display= 'none';
+      } else {
+        arrowDown.style.display ='none';
+        arrowUp.style.display ='flex';
+      }
+      
     });
 
     menu.querySelectorAll("li").forEach(item => {
       item.addEventListener("click", () => {
-        toggle.textContent = item.textContent;
+        label.textContent = item.textContent;
         menu.classList.remove("show");
 
+        menu.querySelectorAll("li").forEach(li => 
+          li.classList.remove("active"));
+        
+        item.classList.add("active");
+        arrowDown.style.display = 'flex';
+        arrowUp.style.display   = 'none';
         
         activeFilters[drop.dataset.filter] = item.dataset.value;
         loadPhotos(1, false);
@@ -74,5 +92,30 @@ jQuery(document).ready(function ($) {
     document.querySelectorAll(".dropdown-content").forEach(menu => {
       menu.classList.remove("show");
     });
+  });
+});
+
+// ouverture et fermeture modal contact // 
+
+document.addEventListener("click", function(e) {
+  const btn = e.target.closest('.btn__contact');
+  if (!btn) return;
+
+  const modal   = document.querySelector('.modal');
+  const overlay = document.querySelector('.modal__overlay');
+  if (!modal) return;
+
+  const ref = btn.dataset.ref || "";
+  const refField = modal.querySelector('input[name="your-subject"]');
+  if (refField) {
+    refField.value = ref;
+  }
+
+  modal.style.display = 'flex';
+  console.log('Modal ouverte pour la photo :', ref);
+
+  
+  overlay.addEventListener('click', () => {
+    modal.style.display = 'none';
   });
 });

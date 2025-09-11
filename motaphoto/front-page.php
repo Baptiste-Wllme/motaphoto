@@ -45,7 +45,11 @@ endif;
     <div id="photo-filters" class="photo-filters">
       <!-- Catégories -->
       <div class="dropdown" data-filter="categorie">
-        <button class="dropdown-toggle select">Catégories ⏷</button>
+        <button class="dropdown-toggle select">
+          <div>Catégories</div>
+          <div class="arrow-down">⏷</div>
+          <div class="arrow-up">⏶</div>
+        </button>
         <ul class="dropdown-content">
           <li data-value="">Catégories</li>
           <?php
@@ -59,9 +63,13 @@ endif;
 
       <!-- Formats -->
       <div class="dropdown" data-filter="format">
-        <button class="dropdown-toggle  select">Formats ⏷</button>
+        <button class="dropdown-toggle  select">
+          <div>Formats</div>
+          <div class="arrow-down">⏷</div>
+          <div class="arrow-up">⏶</div> 
+        </button>
         <ul class="dropdown-content">
-          <li data-value="">Tous</li>
+          <li data-value="">Formats</li>
           <?php
           $formats = get_terms('format');
           foreach ($formats as $fmt) {
@@ -73,10 +81,15 @@ endif;
     </div>
 
     <div class="dropdown" data-filter="order">
-      <button class="dropdown-toggle select">Trier par ⏷</button>
+      <button class="dropdown-toggle select">
+        <div>Trier par</div>
+        <div class="arrow-down">⏷</div>
+        <div class="arrow-up">⏶</div>
+      </button>
       <ul class="dropdown-content">
-        <li data-value="DESC">Plus récentes → Plus anciennes</li>
-        <li data-value="ASC">Plus anciennes → Plus récentes</li>
+        <li data-value="">Trier par</li>
+        <li data-value="DESC">à partir des plus récentes</li>
+        <li data-value="ASC">à partir desp lus anciennes</li>
       </ul>
     </div>
 
