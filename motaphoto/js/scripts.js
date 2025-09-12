@@ -89,6 +89,18 @@ jQuery(document).ready(function ($) {
   });
 
   document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+      const menu      = drop.querySelector(".dropdown-content");
+      const arrowUp   = drop.querySelector(".arrow-up");
+      const arrowDown = drop.querySelector(".arrow-down");
+    
+      menu.classList.remove("show");
+      arrowDown.style.display = 'flex';
+      arrowUp.style.display   = 'none';
+    });
+  });
+
+  document.addEventListener("click", () => {
     document.querySelectorAll(".dropdown-content").forEach(menu => {
       menu.classList.remove("show");
     });

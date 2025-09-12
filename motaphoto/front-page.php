@@ -104,7 +104,6 @@ endif;
         'post_type'      => 'photo',
         'posts_per_page' => 8,
         'paged'          => 1,
-        'orderby'        => 'rand'
 
       ];
       $photos = new WP_Query($args);

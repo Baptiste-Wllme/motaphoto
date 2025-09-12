@@ -26,7 +26,7 @@ body {
 
 .hero-title { 
   font-family: "SpaceMono-Regular";
-  font-size: 96px;
+  font-size: 8vw;
   font-style: italic;
   font-weight: 700;
   text-align: center;
@@ -45,6 +45,7 @@ body {
   justify-content: space-evenly;
   margin-left: 2rem;
   margin-bottom: 10px;
+  gap: 20px;
 
   .select {
     padding: 10px 15px;
@@ -60,12 +61,8 @@ body {
   .photo-filters,
   .date-filter {
     display: flex;
-    
     gap: 20px;
-    flex-wrap: wrap;
-    width: 50%;
-
-    
+    flex-wrap: nowrap;
   }
 }
 
@@ -86,7 +83,9 @@ body {
 
       img {
         width: 35vw;
-        height: 600px;
+        max-width: 550px;
+        height: 50vh;
+        max-height: 550px;
         object-fit: cover;
         display: block;
         transition: transform 0.5s ease;

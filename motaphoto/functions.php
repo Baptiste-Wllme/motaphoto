@@ -48,19 +48,23 @@ function nm_filter_photos() {
     $category = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
     $format   = isset($_POST['format'])    ? sanitize_text_field($_POST['format'])   : '';
     $order    = isset($_POST['order']) && in_array($_POST['order'], ['ASC','DESC']) ? $_POST['order'] : '';
-    $paged    = isset($_POST['page']) ? max(1, intval($_POST['page'])) : 1;
+    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
     $args = [
         'post_type'      => 'photo',
         'posts_per_page' => 8,
         'paged'          => $paged,
+        'orderby'        => 'date',
+        'order'          => !empty($_POST['order']) ? $_POST['order'] : 'DESC',
+        'tax_query'      => array(),
     ];
 
     if ($order) {
         $args['orderby'] = 'date';
         $args['order']   = $order;
     } else {
-        $args['orderby'] = 'rand';
+        $args['orderby'] = 'date';
+        $args['order']   = 'DESC';
     }
 
     $tax_query = [];

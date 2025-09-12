@@ -8,7 +8,7 @@ $cats    = get_the_terms(get_the_ID(), 'categorie');
 $cat_name = $cats && !is_wp_error($cats) ? $cats[0]->name : '';
 ?>
 
-<article class="photo-block">
+<article class="photo-block" data-id="<?php the_ID(); ?>">
     <div class="container-photo-block">
   
     <img 
