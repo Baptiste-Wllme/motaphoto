@@ -18,11 +18,13 @@
   background: #fff;
   border: solid black 4px;
   z-index: 1001;
+  max-width: 75vw;
 
     .modal__title {
       position: relative;
       top: 15px;
       padding-bottom: 50px;
+      width: 100%;
     }
 
     .wpcf7 {                  // contener questionnaire // 

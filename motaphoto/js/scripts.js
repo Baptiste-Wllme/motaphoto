@@ -131,3 +131,19 @@ document.addEventListener("click", function(e) {
     modal.style.display = 'none';
   });
 });
+
+// affichage menu burger // 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burger-button");
+  const closeBtn  = document.getElementById("close-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  burgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+});

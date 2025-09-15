@@ -10,6 +10,79 @@ body {
   margin: 0;
 }
 
+.burger-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-button span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.close-button {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-burger-content {
+  background-color: rgb(224, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 50px;
+}
+.menu-burger-content li {
+  list-style: none;
+}
+.menu-burger-content li a {
+  text-decoration: none;
+  font-size: 44px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  transition: font-size 1s ease, opacity 1s ease;
+}
+.menu-burger-content li a:hover {
+  opacity: 50%;
+  font-size: 55px;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -258,11 +331,13 @@ body {
   background: #fff;
   border: solid black 4px;
   z-index: 1001;
+  max-width: 75vw;
 }
 .modal .modal__content .modal__title {
   position: relative;
   top: 15px;
   padding-bottom: 50px;
+  width: 100%;
 }
 .modal .modal__content .wpcf7 {
   display: flex;
@@ -646,7 +721,7 @@ body {
     width: 35vw;
   }
   .photo-block img {
-    max-height: 35vh;
+    max-height: 40vh !important;
   }
 }
 @media screen and (max-width: 768px) {
@@ -654,10 +729,41 @@ body {
     width: 50vw !important;
   }
   .photo-block img {
-    max-height: 35vh !important;
+    max-height: 30vh !important;
+  }
+  #mobile-menu {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+  .title-site-burger {
+    position: relative;
+    left: 7%;
+    max-width: 216px;
+  }
+  .burger-button {
+    display: flex;
+    position: relative;
+    right: 3vw;
+  }
+  .btn-container {
+    display: none !important;
+  }
+  .active {
+    right: 0;
+  }
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding-top: 30px;
+    padding-bottom: 40px;
   }
 }
 @media screen and (max-width: 425px) {
+  .hero {
+    height: 50vh;
+  }
   .select {
     width: 65vw !important;
   }

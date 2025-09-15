@@ -12,6 +12,87 @@ body {
     margin: 0;
 }
 
+.burger-button {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-button span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000; 
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; 
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  transition: right 0.4s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.close-button {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-burger-content {
+  background-color: rgba(224, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 50px;
+  
+  li {
+    list-style: none;
+    
+    a {
+      text-decoration: none;
+      font-size: 44px;
+      color: rgb(255 255 255);
+      font-weight: 400;
+      transition: font-size 1s ease,
+                  opacity 1s ease ;
+
+      &:hover {
+        opacity: 50%;
+        font-size: 55px;
+      }
+    }
+  } 
+}
+
+
+
 .hero {
   position: relative;
   width: 100%;

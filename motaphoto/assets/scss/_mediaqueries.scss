@@ -33,7 +33,7 @@
     //gallery // 
 
     .photo-block img {
-        max-height: 35vh; 
+        max-height: 40vh !important; 
     } 
 }
 
@@ -46,12 +46,52 @@
 
     //gallery // 
     .photo-block img {
-        max-height: 35vh !important;
+        max-height: 30vh !important;
+    }
+
+    // menu burger //
+    #mobile-menu {
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        
+    }
+
+    .title-site-burger {
+        position: relative;
+        left: 7%;
+        max-width: 216px;
+    }
+    .burger-button {
+        display: flex;
+        position: relative;
+        right: 3vw;
+    }
+
+    .btn-container { 
+        display: none !important;
+    }
+
+    .active {
+      right: 0;
+    }
+
+    .footer-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding-top: 30px;
+        padding-bottom: 40px;
     }
 }
 
 @media screen and (max-width: 425px) {
     
+    //hero // 
+
+    .hero {
+        height: 50vh;
+    }
     // filtres //
     .select {
         width: 65vw !important;
