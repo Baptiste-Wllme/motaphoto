@@ -343,17 +343,29 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Poppins";
+  width: 80%;
+  justify-self: center;
 }
 .modal .modal__content .wpcf7 .wpcf7-form {
   display: flex;
+  width: 65%;
   flex-direction: column;
 }
+.modal .modal__content .wpcf7 .wpcf7-form label {
+  width: 100%;
+  display: block;
+}
+.modal .modal__content .wpcf7 .wpcf7-form label span {
+  width: 100%;
+  display: block;
+}
 .modal .modal__content .wpcf7 input {
-  padding-left: 10px;
+  padding-left: 3%;
   min-height: 40px;
   border-radius: 8px;
   border: 1px solid rgb(184, 187, 194);
   text-transform: uppercase;
+  width: 96%;
 }
 .modal .modal__content .wpcf7 textarea {
   padding-left: 10px;
@@ -363,6 +375,7 @@ body {
   border-radius: 8px;
   border: 1px solid rgb(184, 187, 194);
   resize: none;
+  width: 96%;
 }
 .modal .modal__content .wpcf7 .wpcf7-submit {
   width: 100%;
@@ -758,6 +771,9 @@ body {
     gap: 15px !important;
     padding-top: 30px;
     padding-bottom: 40px;
+  }
+  .wpcf7-form {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 425px) {
