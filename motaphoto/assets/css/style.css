@@ -853,6 +853,11 @@ body {
   }
   .photo-block img {
     max-height: 70vh !important;
+    height: 30vh !important;
+  }
+  .related-photos-list .photo-block img {
+    max-height: 70vh !important;
+    height: 60vh !important;
   }
 }
 @media screen and (max-width: 425px) {
@@ -881,12 +886,16 @@ body {
   }
   .container-photos .photo-block img {
     width: 100% !important;
+    height: 100% !important;
   }
   .related-photos-list {
     flex-direction: column;
     gap: 40px;
   }
   .related-photos-list .container-photo-block {
+    height: 30vh !important;
+  }
+  .related-photos-list .photo-block img {
     height: 30vh !important;
   }
 }

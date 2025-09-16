@@ -191,6 +191,14 @@
 
     .photo-block img {
         max-height: 70vh !important;
+        height: 30vh !important;
+    }
+
+    .related-photos-list {
+        .photo-block img {
+            max-height: 70vh !important;
+            height: 60vh !important;
+        }
     }
     
     
@@ -228,6 +236,7 @@
 
             img {
                width: 100% !important; 
+               height: 100% !important;
             }
         }
     }
@@ -239,6 +248,10 @@
         gap: 40px;
 
         .container-photo-block {
+            height: 30vh !important;
+        }
+
+        .photo-block img {
             height: 30vh !important;
         }
     }
