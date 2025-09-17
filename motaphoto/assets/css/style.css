@@ -5,9 +5,23 @@
   font-style: normal;
   font-display: swap;
 }
+.page-title {
+  justify-self: center;
+  margin-top: 6rem;
+}
+
+.page-content {
+  justify-self: center;
+  width: 80%;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
 body {
   font-family: "SpaceMono-Regular";
   margin: 0;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .burger-button {
@@ -81,6 +95,10 @@ body {
 .menu-burger-content li a:hover {
   opacity: 50%;
   font-size: 55px;
+}
+
+.page {
+  min-height: 100vh;
 }
 
 .hero {
@@ -309,6 +327,11 @@ body {
   font-style: normal;
   font-size: 16px;
   font-family: "SpaceMono-Regular";
+  text-decoration: auto;
+  color: #000000;
+}
+.site-footer .footer-container .btn-footer:hover {
+  opacity: 50%;
 }
 
 .modal {

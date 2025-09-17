@@ -31,7 +31,7 @@ if ($hero_query->have_posts()) :
   wp_reset_postdata();
 endif;
 ?>
-
+<div class="site-wrapper">
 <main class="site-main">
   <!-- Hero -->
   <section class="hero" style="background-image: url('<?php echo esc_url($hero_img); ?>');">
@@ -89,7 +89,7 @@ endif;
       <ul class="dropdown-content">
         <li data-value="">Trier par</li>
         <li data-value="DESC">à partir des plus récentes</li>
-        <li data-value="ASC">à partir desp lus anciennes</li>
+        <li data-value="ASC">à partir des plus anciennes</li>
       </ul>
     </div>
 

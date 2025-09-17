@@ -1,11 +1,12 @@
 
 <footer class="site-footer">
   <div class="footer-container">
-    <button class="btn-footer">Mention légales</button>
-    <button class="btn-footer">Vie privée</button>
-    <button class="btn-footer">Tous droit réservés</button>
+    <p><a class="btn-footer" href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">Mentions légales</a></p>
+    <p> <a class="btn-footer" href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Vie privée</a></p>
+    <p class="btn-footer">Tous droits réservés</p>
   </div>
 </footer>
+</div>
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" >
