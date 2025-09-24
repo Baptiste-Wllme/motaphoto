@@ -23,8 +23,6 @@ jQuery(document).ready(function ($) {
       page: page,
     };
 
-    console.log(' Données envoyées :', data);
-
     $.post(nm_ajax.ajax_url, data)
       .done(response => {
         console.log('Réponse AJAX :', response);

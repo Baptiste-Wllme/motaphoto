@@ -16,7 +16,7 @@ $args = [
     [
       'taxonomy' => 'format',
       'field'    => 'slug',
-      'terms'    => 'paysage',   // slug du format paysage
+      'terms'    => 'paysage',   
     ],
   ],
 ];

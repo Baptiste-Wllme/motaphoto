@@ -32,16 +32,13 @@
 
     //gallery // 
 
-    .photo-block img {
-        max-height: 40vh !important; 
-    } 
+    
 
     // single-photo //
 
-    .container-photo-block {
-        height: 100% !important;
-        
-    }
+    
+
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -89,6 +86,7 @@
         gap: 15px !important;
         padding-top: 30px;
         padding-bottom: 40px;
+        justify-self: center;
     }
 
     // modale // 
