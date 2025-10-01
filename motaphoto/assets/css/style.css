@@ -756,13 +756,17 @@ body {
   .filters .select {
     width: 35vw;
   }
+  .photo-title-vision, .photo-cat {
+    font-size: 12px;
+  }
+  .container-photo-block {
+    max-height: 50vh;
+    height: 40vh;
+  }
 }
 @media screen and (max-width: 768px) {
   .select {
     width: 50vw !important;
-  }
-  .photo-block img {
-    max-height: 30vh !important;
   }
   #mobile-menu {
     display: flex;
@@ -869,13 +873,9 @@ body {
   .container-content .container-next-prev {
     display: none;
   }
-  .photo-block img {
-    max-height: 70vh !important;
-    height: 30vh !important;
-  }
-  .related-photos-list .photo-block img {
-    max-height: 70vh !important;
-    height: 60vh !important;
+  .container-photo-block {
+    max-height: 50vh;
+    height: 30vh;
   }
 }
 @media screen and (max-width: 425px) {
@@ -915,6 +915,9 @@ body {
   }
   .related-photos-list .photo-block img {
     height: 30vh !important;
+  }
+  .photo-title-vision, .photo-cat {
+    font-size: 15px;
   }
 }
 

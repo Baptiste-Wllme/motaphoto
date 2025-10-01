@@ -32,11 +32,16 @@
 
     //gallery // 
 
-    
+    .photo-title-vision, .photo-cat {
+        font-size: 12px;
+    }
 
     // single-photo //
 
-    
+    .container-photo-block {
+        max-height: 50vh;
+        height: 40vh;
+    }
 
     
 }
@@ -49,9 +54,7 @@
     }
 
     //gallery // 
-    .photo-block img {
-        max-height: 30vh !important;
-    }
+    
 
     // menu burger //
     #mobile-menu {
@@ -187,17 +190,11 @@
         }
     }
 
-    .photo-block img {
-        max-height: 70vh !important;
-        height: 30vh !important;
+    .container-photo-block {
+        max-height: 50vh;
+        height: 30vh;
     }
-
-    .related-photos-list {
-        .photo-block img {
-            max-height: 70vh !important;
-            height: 60vh !important;
-        }
-    }
+   
     
     
 }
@@ -252,6 +249,12 @@
         .photo-block img {
             height: 30vh !important;
         }
+    }
+
+    // overlay // 
+
+    .photo-title-vision, .photo-cat {
+        font-size: 15px;
     }
         
         

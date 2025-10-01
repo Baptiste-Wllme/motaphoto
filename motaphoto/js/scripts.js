@@ -21,6 +21,7 @@ jQuery(document).ready(function ($) {
       format: activeFilters.format,
       order: activeFilters.order,
       page: page,
+      security: nm_ajax.nonce
     };
 
     $.post(nm_ajax.ajax_url, data)

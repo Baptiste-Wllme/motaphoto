@@ -24,6 +24,7 @@ function nm_enqueue_scripts() {
 
     wp_localize_script('nm-scripts', 'nm_ajax', [
         'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('nm_filter_nonce'),
     ]);
 }
 add_action('wp_enqueue_scripts', 'nm_enqueue_scripts');
@@ -45,6 +46,9 @@ add_action('wp_ajax_nopriv_filter_photos', 'nm_filter_photos');
 
 
 function nm_filter_photos() {
+
+    check_ajax_referer('nm_filter_nonce', 'security');
+    
     $category = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
     $format   = isset($_POST['format'])    ? sanitize_text_field($_POST['format'])   : '';
     $order    = isset($_POST['order']) && in_array($_POST['order'], ['ASC','DESC']) ? $_POST['order'] : '';
